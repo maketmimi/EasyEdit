@@ -1,0 +1,13 @@
+﻿Always Foucesed
+update main strip menu enable/disable functionality
+quick access toolbar
+if you want to fix RTL using paragraph level alignment 
+Add icons to the menu items
+
+
+
+
+
+
+
+Add font
