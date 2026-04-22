@@ -52,12 +52,12 @@
             this.ItmRtlLtr = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.ItmFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItmForeColor = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.ItmHowToUse = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ItmAboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.TxtMainCanvas = new System.Windows.Forms.TextBox();
-            this.ItmForeColor = new System.Windows.Forms.ToolStripMenuItem();
             this.MsrTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@
             this.MnuFormat,
             this.MnuHelp});
             this.MsrTopMenu.Name = "MsrTopMenu";
+            this.MsrTopMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             // 
             // MnuFile
             // 
@@ -82,8 +83,9 @@
             // ItmExit
             // 
             this.ItmExit.BackColor = System.Drawing.Color.White;
-            this.ItmExit.Name = "ItmExit";
+            this.ItmExit.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmExit, "ItmExit");
+            this.ItmExit.Name = "ItmExit";
             this.ItmExit.Click += new System.EventHandler(this.ItmExit_Click);
             // 
             // MnuEdit
@@ -106,47 +108,54 @@
             // ItmUndo
             // 
             this.ItmUndo.BackColor = System.Drawing.Color.White;
-            this.ItmUndo.Name = "ItmUndo";
+            this.ItmUndo.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmUndo, "ItmUndo");
+            this.ItmUndo.Name = "ItmUndo";
             this.ItmUndo.Click += new System.EventHandler(this.ItmUndo_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.Black;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // ItmCut
             // 
             this.ItmCut.BackColor = System.Drawing.Color.White;
-            this.ItmCut.Name = "ItmCut";
+            this.ItmCut.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmCut, "ItmCut");
+            this.ItmCut.Name = "ItmCut";
             this.ItmCut.Click += new System.EventHandler(this.ItmCut_Click);
             // 
             // ItmCopy
             // 
             this.ItmCopy.BackColor = System.Drawing.Color.White;
-            this.ItmCopy.Name = "ItmCopy";
+            this.ItmCopy.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmCopy, "ItmCopy");
+            this.ItmCopy.Name = "ItmCopy";
             this.ItmCopy.Click += new System.EventHandler(this.ItmCopy_Click);
             // 
             // ItmPaste
             // 
             this.ItmPaste.BackColor = System.Drawing.Color.White;
-            this.ItmPaste.Name = "ItmPaste";
+            this.ItmPaste.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmPaste, "ItmPaste");
+            this.ItmPaste.Name = "ItmPaste";
             this.ItmPaste.Click += new System.EventHandler(this.ItmPaste_Click);
             // 
             // ItmDelete
             // 
             this.ItmDelete.BackColor = System.Drawing.Color.White;
-            this.ItmDelete.Name = "ItmDelete";
+            this.ItmDelete.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmDelete, "ItmDelete");
+            this.ItmDelete.Name = "ItmDelete";
             this.ItmDelete.Click += new System.EventHandler(this.ItmDelete_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator2.ForeColor = System.Drawing.Color.Black;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
@@ -159,14 +168,16 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator3.ForeColor = System.Drawing.Color.Black;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // ItmSelectAll
             // 
             this.ItmSelectAll.BackColor = System.Drawing.Color.White;
-            this.ItmSelectAll.Name = "ItmSelectAll";
+            this.ItmSelectAll.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmSelectAll, "ItmSelectAll");
+            this.ItmSelectAll.Name = "ItmSelectAll";
             this.ItmSelectAll.Click += new System.EventHandler(this.ItmSelectAll_Click);
             // 
             // MnuFormat
@@ -180,46 +191,49 @@
             this.ItmForeColor});
             this.MnuFormat.Name = "MnuFormat";
             resources.ApplyResources(this.MnuFormat, "MnuFormat");
-            this.MnuFormat.DropDownOpened += new System.EventHandler(this.MnuFormat_DropDownOpened);
             // 
             // ItmWordWrap
             // 
             this.ItmWordWrap.CheckOnClick = true;
-            this.ItmWordWrap.Name = "ItmWordWrap";
             resources.ApplyResources(this.ItmWordWrap, "ItmWordWrap");
+            this.ItmWordWrap.Name = "ItmWordWrap";
             this.ItmWordWrap.CheckedChanged += new System.EventHandler(this.ItmWordWrap_CheckedChanged);
             // 
             // ItmTextAlignment
             // 
             this.ItmTextAlignment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ItmAlignTextRight,
-            this.ItmAlignTextLeft,
-            this.AlignTextCenter});
-            this.ItmTextAlignment.Name = "ItmTextAlignment";
+            this.AlignTextCenter,
+            this.ItmAlignTextLeft});
+            this.ItmTextAlignment.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmTextAlignment, "ItmTextAlignment");
+            this.ItmTextAlignment.Name = "ItmTextAlignment";
             // 
             // ItmAlignTextRight
             // 
-            this.ItmAlignTextRight.Name = "ItmAlignTextRight";
+            this.ItmAlignTextRight.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmAlignTextRight, "ItmAlignTextRight");
+            this.ItmAlignTextRight.Name = "ItmAlignTextRight";
             this.ItmAlignTextRight.Click += new System.EventHandler(this.ItmAlignTextRight_Click);
             // 
             // ItmAlignTextLeft
             // 
-            this.ItmAlignTextLeft.Name = "ItmAlignTextLeft";
+            this.ItmAlignTextLeft.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.ItmAlignTextLeft, "ItmAlignTextLeft");
+            this.ItmAlignTextLeft.Name = "ItmAlignTextLeft";
             this.ItmAlignTextLeft.Click += new System.EventHandler(this.ItmAlignTextLeft_Click);
             // 
             // AlignTextCenter
             // 
-            this.AlignTextCenter.Name = "AlignTextCenter";
+            this.AlignTextCenter.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.AlignTextCenter, "AlignTextCenter");
+            this.AlignTextCenter.Name = "AlignTextCenter";
             this.AlignTextCenter.Click += new System.EventHandler(this.AlignTextCenter_Click);
             // 
             // ItmRtlLtr
             // 
-            this.ItmRtlLtr.Name = "ItmRtlLtr";
             resources.ApplyResources(this.ItmRtlLtr, "ItmRtlLtr");
+            this.ItmRtlLtr.Name = "ItmRtlLtr";
             this.ItmRtlLtr.Click += new System.EventHandler(this.ItmRtlLtr_Click);
             // 
             // toolStripSeparator5
@@ -231,9 +245,15 @@
             // 
             this.ItmFont.BackColor = System.Drawing.Color.White;
             this.ItmFont.ForeColor = System.Drawing.Color.Black;
-            this.ItmFont.Name = "ItmFont";
             resources.ApplyResources(this.ItmFont, "ItmFont");
+            this.ItmFont.Name = "ItmFont";
             this.ItmFont.Click += new System.EventHandler(this.ItmFont_Click);
+            // 
+            // ItmForeColor
+            // 
+            resources.ApplyResources(this.ItmForeColor, "ItmForeColor");
+            this.ItmForeColor.Name = "ItmForeColor";
+            this.ItmForeColor.Click += new System.EventHandler(this.ItmForeColor_Click);
             // 
             // MnuHelp
             // 
@@ -266,12 +286,6 @@
             resources.ApplyResources(this.TxtMainCanvas, "TxtMainCanvas");
             this.TxtMainCanvas.ForeColor = System.Drawing.Color.Black;
             this.TxtMainCanvas.Name = "TxtMainCanvas";
-            // 
-            // ItmForeColor
-            // 
-            this.ItmForeColor.Name = "ItmForeColor";
-            resources.ApplyResources(this.ItmForeColor, "ItmForeColor");
-            this.ItmForeColor.Click += new System.EventHandler(this.ItmForeColor_Click);
             // 
             // FrmMain
             // 

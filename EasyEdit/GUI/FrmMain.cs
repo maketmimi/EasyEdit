@@ -103,19 +103,18 @@ namespace EasyEdit
         private void ItmRtlLtr_Click(object sender, EventArgs e)
         {
             if (TxtMainCanvas.RightToLeft == RightToLeft.Yes)
+            {
                 TxtMainCanvas.RightToLeft = RightToLeft.No;
-            else
-                TxtMainCanvas.RightToLeft = RightToLeft.Yes;
-        }
-
-        private void MnuFormat_DropDownOpened(object sender, EventArgs e)
-        {
-            if (TxtMainCanvas.RightToLeft == RightToLeft.Yes)
-                ItmRtlLtr.Text = "من اليسار إلى اليمين";
-            else
                 ItmRtlLtr.Text = "من اليمين إلى اليسار";
-        }
+            }
+            else
+            {
+                TxtMainCanvas.RightToLeft = RightToLeft.Yes;
+                ItmRtlLtr.Text = "من اليسار إلى اليمين";
+            }
 
+        }
+                
         private void ItmForeColor_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -126,5 +125,6 @@ namespace EasyEdit
             }
 
         }
+    
     }
 }

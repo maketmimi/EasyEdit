@@ -32,6 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EasyEdit.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>edit.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,15 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="GUI\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
+    <Compile Include="GUI\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="GUI\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,6 +86,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\MenuIcons\AlignLeft.png" />
+    <Content Include="Assets\MenuIcons\AlignRight.png" />
+    <Content Include="Assets\MenuIcons\HowToUse.png" />
+    <Content Include="Assets\MenuIcons\CenterText.png" />
+    <Content Include="Assets\MenuIcons\Font.png" />
+    <Content Include="Assets\MenuIcons\FontColor.png" />
+    <Content Include="Assets\MenuIcons\About.png" />
+    <Content Include="Assets\MenuIcons\TextDirection.png" />
+    <Content Include="Assets\MenuIcons\TextAlignment.png" />
+    <Content Include="Assets\MenuIcons\WordWrap_BestQuality.png" />
+    <Content Include="Assets\MenuIcons\WordWrap_GoodQuality.png" />
+    <Content Include="Assets\MenuIcons\WordWrap.png" />
+    <Content Include="Assets\MenuIcons\Replace.png" />
+    <Content Include="Assets\MenuIcons\AppIcon.ico" />
+    <Content Include="Assets\MenuIcons\Delete.png" />
+    <Content Include="Assets\MenuIcons\edit.png" />
+    <Content Include="Assets\MenuIcons\CloseAppIcon.ico" />
+    <Content Include="Assets\MenuIcons\CloseApp.png" />
+    <Content Include="Assets\MenuIcons\Cut.png" />
+    <Content Include="Assets\MenuIcons\Copy.png" />
+    <Content Include="Assets\MenuIcons\Paste.png" />
+    <Content Include="Assets\MenuIcons\SelectAll.png" />
+    <Content Include="Assets\MenuIcons\Undo.png" />
+    <Content Include="edit.ico" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
