@@ -7,6 +7,6 @@ Add Files functionality
 status bar
 status bar toggle
 Replace functionality
-
+Manage encoding
 
 Add font

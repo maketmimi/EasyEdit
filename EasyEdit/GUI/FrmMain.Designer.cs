@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.MsrTopMenu = new System.Windows.Forms.MenuStrip();
             this.MnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.ItmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.ItmUndo = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +52,8 @@
             this.ItmWordWrap = new System.Windows.Forms.ToolStripMenuItem();
             this.ItmTextAlignment = new System.Windows.Forms.ToolStripMenuItem();
             this.ItmAlignTextRight = new System.Windows.Forms.ToolStripMenuItem();
-            this.ItmAlignTextLeft = new System.Windows.Forms.ToolStripMenuItem();
             this.AlignTextCenter = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItmAlignTextLeft = new System.Windows.Forms.ToolStripMenuItem();
             this.ItmRtlLtr = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.ItmFont = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +62,9 @@
             this.ItmHowToUse = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ItmAboutProgram = new System.Windows.Forms.ToolStripMenuItem();
-            this.TxtMainCanvas = new System.Windows.Forms.TextBox();
+            this.DiaOpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.MainFontDialog = new System.Windows.Forms.FontDialog();
+            this.MainColorDialog = new System.Windows.Forms.ColorDialog();
             this.MsrTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,9 +83,43 @@
             // 
             this.MnuFile.BackColor = System.Drawing.Color.White;
             this.MnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemNewFile,
+            this.ToolStripMenuItemOpenFile,
+            this.ToolStripMenuItemSave,
+            this.ToolStripMenuItemSaveAs,
+            this.toolStripSeparator6,
             this.ItmExit});
             this.MnuFile.Name = "MnuFile";
             resources.ApplyResources(this.MnuFile, "MnuFile");
+            // 
+            // ToolStripMenuItemNewFile
+            // 
+            resources.ApplyResources(this.ToolStripMenuItemNewFile, "ToolStripMenuItemNewFile");
+            this.ToolStripMenuItemNewFile.Name = "ToolStripMenuItemNewFile";
+            this.ToolStripMenuItemNewFile.Click += new System.EventHandler(this.ToolStripMenuItemNewFile_Click);
+            // 
+            // ToolStripMenuItemOpenFile
+            // 
+            resources.ApplyResources(this.ToolStripMenuItemOpenFile, "ToolStripMenuItemOpenFile");
+            this.ToolStripMenuItemOpenFile.Name = "ToolStripMenuItemOpenFile";
+            this.ToolStripMenuItemOpenFile.Click += new System.EventHandler(this.ToolStripMenuItemOpenFile_Click);
+            // 
+            // ToolStripMenuItemSave
+            // 
+            resources.ApplyResources(this.ToolStripMenuItemSave, "ToolStripMenuItemSave");
+            this.ToolStripMenuItemSave.Name = "ToolStripMenuItemSave";
+            this.ToolStripMenuItemSave.Click += new System.EventHandler(this.ToolStripMenuItemSave_Click);
+            // 
+            // ToolStripMenuItemSaveAs
+            // 
+            resources.ApplyResources(this.ToolStripMenuItemSaveAs, "ToolStripMenuItemSaveAs");
+            this.ToolStripMenuItemSaveAs.Name = "ToolStripMenuItemSaveAs";
+            this.ToolStripMenuItemSaveAs.Click += new System.EventHandler(this.ToolStripMenuItemSaveAs_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // ItmExit
             // 
@@ -101,8 +142,8 @@
             this.ItmReplace,
             this.toolStripSeparator3,
             this.ItmSelectAll});
-            this.MnuEdit.Name = "MnuEdit";
             resources.ApplyResources(this.MnuEdit, "MnuEdit");
+            this.MnuEdit.Name = "MnuEdit";
             this.MnuEdit.DropDownOpening += new System.EventHandler(this.MnuEdit_DropDownOpening);
             // 
             // ItmUndo
@@ -189,8 +230,9 @@
             this.toolStripSeparator5,
             this.ItmFont,
             this.ItmForeColor});
-            this.MnuFormat.Name = "MnuFormat";
             resources.ApplyResources(this.MnuFormat, "MnuFormat");
+            this.MnuFormat.Name = "MnuFormat";
+            this.MnuFormat.DropDownOpening += new System.EventHandler(this.MnuFormat_DropDownOpening);
             // 
             // ItmWordWrap
             // 
@@ -216,19 +258,19 @@
             this.ItmAlignTextRight.Name = "ItmAlignTextRight";
             this.ItmAlignTextRight.Click += new System.EventHandler(this.ItmAlignTextRight_Click);
             // 
-            // ItmAlignTextLeft
-            // 
-            this.ItmAlignTextLeft.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.ItmAlignTextLeft, "ItmAlignTextLeft");
-            this.ItmAlignTextLeft.Name = "ItmAlignTextLeft";
-            this.ItmAlignTextLeft.Click += new System.EventHandler(this.ItmAlignTextLeft_Click);
-            // 
             // AlignTextCenter
             // 
             this.AlignTextCenter.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.AlignTextCenter, "AlignTextCenter");
             this.AlignTextCenter.Name = "AlignTextCenter";
             this.AlignTextCenter.Click += new System.EventHandler(this.AlignTextCenter_Click);
+            // 
+            // ItmAlignTextLeft
+            // 
+            this.ItmAlignTextLeft.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.ItmAlignTextLeft, "ItmAlignTextLeft");
+            this.ItmAlignTextLeft.Name = "ItmAlignTextLeft";
+            this.ItmAlignTextLeft.Click += new System.EventHandler(this.ItmAlignTextLeft_Click);
             // 
             // ItmRtlLtr
             // 
@@ -278,25 +320,30 @@
             // 
             resources.ApplyResources(this.ItmAboutProgram, "ItmAboutProgram");
             this.ItmAboutProgram.Name = "ItmAboutProgram";
+            this.ItmAboutProgram.Click += new System.EventHandler(this.ItmAboutProgram_Click);
             // 
-            // TxtMainCanvas
+            // DiaOpenFile
             // 
-            this.TxtMainCanvas.BackColor = System.Drawing.Color.White;
-            this.TxtMainCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.TxtMainCanvas, "TxtMainCanvas");
-            this.TxtMainCanvas.ForeColor = System.Drawing.Color.Black;
-            this.TxtMainCanvas.Name = "TxtMainCanvas";
+            this.DiaOpenFile.DefaultExt = "txt";
+            resources.ApplyResources(this.DiaOpenFile, "DiaOpenFile");
+            // 
+            // MainFontDialog
+            // 
+            this.MainFontDialog.ShowApply = true;
+            this.MainFontDialog.Apply += new System.EventHandler(this.FdMain_Apply);
             // 
             // FrmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.TxtMainCanvas);
             this.Controls.Add(this.MsrTopMenu);
             this.ForeColor = System.Drawing.Color.Black;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.MsrTopMenu;
             this.Name = "FrmMain";
+            this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);
+            this.Shown += new System.EventHandler(this.FrmMain_Shown);
             this.MsrTopMenu.ResumeLayout(false);
             this.MsrTopMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -326,7 +373,6 @@
         private System.Windows.Forms.ToolStripMenuItem ItmHowToUse;
         private System.Windows.Forms.ToolStripMenuItem ItmAboutProgram;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.TextBox TxtMainCanvas;
         private System.Windows.Forms.ToolStripMenuItem ItmTextAlignment;
         private System.Windows.Forms.ToolStripMenuItem ItmAlignTextRight;
         private System.Windows.Forms.ToolStripMenuItem ItmAlignTextLeft;
@@ -335,6 +381,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem ItmRtlLtr;
         private System.Windows.Forms.ToolStripMenuItem ItmForeColor;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenFile;
+        private System.Windows.Forms.OpenFileDialog DiaOpenFile;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSave;
+        private System.Windows.Forms.FontDialog MainFontDialog;
+        private System.Windows.Forms.ColorDialog MainColorDialog;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNewFile;
     }
 }
 

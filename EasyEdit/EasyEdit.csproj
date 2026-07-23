@@ -13,30 +13,20 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <PropertyGroup>
     <StartupObject>EasyEdit.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>edit.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,6 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmCanvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmCanvas.Designer.cs">
+      <DependentUpon>FrmCanvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +62,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmCanvas.resx">
+      <DependentUpon>FrmCanvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,6 +95,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AppIcon.png" />
     <Content Include="Assets\MenuIcons\AlignLeft.png" />
     <Content Include="Assets\MenuIcons\AlignRight.png" />
     <Content Include="Assets\MenuIcons\HowToUse.png" />
@@ -93,15 +103,24 @@
     <Content Include="Assets\MenuIcons\Font.png" />
     <Content Include="Assets\MenuIcons\FontColor.png" />
     <Content Include="Assets\MenuIcons\About.png" />
+    <Content Include="Assets\MenuIcons\NewFile.png" />
+    <Content Include="Assets\MenuIcons\OpenFile.png" />
+    <Content Include="Assets\MenuIcons\Save.png" />
+    <Content Include="Assets\MenuIcons\Save100x100.png" />
+    <Content Include="Assets\MenuIcons\SaveAs.png" />
+    <Content Include="Assets\MenuIcons\SaveAs100x100.png" />
+    <Content Include="Assets\MenuIcons\SaveAsIcon.png" />
+    <Content Include="Assets\MenuIcons\SaveAsThin.png" />
+    <Content Include="Assets\MenuIcons\SaveBig.png" />
     <Content Include="Assets\MenuIcons\TextDirection.png" />
     <Content Include="Assets\MenuIcons\TextAlignment.png" />
     <Content Include="Assets\MenuIcons\WordWrap_BestQuality.png" />
     <Content Include="Assets\MenuIcons\WordWrap_GoodQuality.png" />
     <Content Include="Assets\MenuIcons\WordWrap.png" />
     <Content Include="Assets\MenuIcons\Replace.png" />
-    <Content Include="Assets\MenuIcons\AppIcon.ico" />
+    <Content Include="Assets\AppIcon.ico" />
     <Content Include="Assets\MenuIcons\Delete.png" />
-    <Content Include="Assets\MenuIcons\edit.png" />
+    <Content Include="Assets\edit.png" />
     <Content Include="Assets\MenuIcons\CloseAppIcon.ico" />
     <Content Include="Assets\MenuIcons\CloseApp.png" />
     <Content Include="Assets\MenuIcons\Cut.png" />
@@ -110,6 +129,8 @@
     <Content Include="Assets\MenuIcons\SelectAll.png" />
     <Content Include="Assets\MenuIcons\Undo.png" />
     <Content Include="edit.ico" />
+    <None Include="Resources\LogoBlack.png" />
+    <None Include="Resources\MalekAltamimi_Logo.png" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
